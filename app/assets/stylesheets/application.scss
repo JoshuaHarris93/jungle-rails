@@ -11,6 +11,10 @@ body {
   padding-top: 70px;
 }
 
+.nav > li > a {
+  display: inline-block;
+}
+
 // Bootstrap adjustments
 form.button_to {
   display: inline;
