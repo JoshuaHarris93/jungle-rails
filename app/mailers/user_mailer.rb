@@ -1,9 +1,10 @@
 class UserMailer < ApplicationMailer
 
-    def email_confirmation
-        @user = params[:user]
-        @url = '/login'
-        mail(to: @user.email, subject: 'Thank you for your order!')
+    default from: 'no-reply@jungle.com'
+    def email_confirmation(order)
+        @order = order
+        mail(to: @order.email, subject: "Order ID:  #{@order.id}")
+
     end
 
 end

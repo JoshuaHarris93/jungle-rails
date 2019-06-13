@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @order.email %></h1>
+    <p>
+      Your total comes to <%= @order.total_cents.to_i/100.00 %>.
+    </p>
+     <tbody>
+        <% @order.line_items.each do |item| %>
+        <tr>
+          <td colspan="2"><%= item.product.name %></td>
+          <td><%= item.quantity %></td>
+          <td>$<%= item.total_price_cents.to_i/100.00 %></td> 
+          <td><%= image_tag(item.product.image, size: "100x100")  %></td>
+        </tr>
+        <% end%>
+      </tbody>
+  </body>
+  </html>

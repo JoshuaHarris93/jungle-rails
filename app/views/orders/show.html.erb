@@ -24,7 +24,7 @@
           <td colspan="2"><%= item.product.name %></td>
           <td><%= item.quantity %></td>
           <td>$<%= item.total_price_cents.to_i/100.00 %></td> 
-          <td><%= image_tag(item.product.image, height: '100', width: '100')  %></td>
+          <td><%= image_tag(item.product.image, size: "100x100")  %></td>
         </tr>
         <% end%>
       </tbody>
