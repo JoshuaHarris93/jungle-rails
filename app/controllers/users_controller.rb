@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+    
     def new
     
     end
@@ -7,6 +8,8 @@ class UsersController < ApplicationController
     def create
         user = User.new(user_params)
         if user.save
+        # mail(to: order.email, subject: "Thanks for your order \##{order.id}!")
+        # UserMailer.with(user: @user)
           session[:user_id] = user.id
           redirect_to '/'
         else
