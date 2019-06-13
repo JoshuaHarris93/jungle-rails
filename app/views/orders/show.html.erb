@@ -6,8 +6,8 @@
 
   <div class="order-summary jumbotron">
     <h2>Thank you for your order!</h2>
-    <p> $ <%= (@order.total_cents.to_i/100.00) %></p>
-    <p>A confirmation email was sent to <%= @order.email%></p>
+    <p>Total: $ <%= (@order.total_cents.to_i/100.00) %></p>
+    <p>A confirmation email has been sent to <%= @order.email%></p>
 
     <table class="table table-bordered">
       <thead>
