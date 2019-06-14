@@ -3,12 +3,10 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-   <% if cart.empty? %>
+  <% if cart.empty? %>  
       <p>Please add an item to your cart!</p>
       <%= link_to "Home", root_path%>
-   <% else%>
-      <% enhanced_cart.each do |item| %>
-          <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+<% else%>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -19,12 +17,10 @@
           <th>Price</th>
         </tr>
       </thead>
-       
       <tbody>
-
-     
-
-      <% end %>
+        <% enhanced_cart.each do |item| %>
+          <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+        <% end %>
       </tbody>
       <tfoot>
         <tr>
@@ -32,7 +28,7 @@
             TOTAL:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+            <%= cart_subtotal_cents.to_f / 100.00 %>
           </th>
         </tr>
       </tfoot>
@@ -55,5 +51,5 @@
       <% end %>
     </div>
   </div>
+<% end%>
 </section>
-<% end %>
