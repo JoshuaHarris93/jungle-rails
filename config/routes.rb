@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   end
 
-
-
   resources :orders, only: [:create, :show]
 
   namespace :admin do
@@ -27,6 +25,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  get '/cart' => 'cart#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

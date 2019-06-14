@@ -1,7 +1,9 @@
 class CartsController < ApplicationController
 
   def show
+    
   end
+
 
   def add_item
     product_id = params[:product_id].to_s
@@ -26,3 +28,4 @@ class CartsController < ApplicationController
   end
 
 end
+
