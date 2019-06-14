@@ -49,6 +49,7 @@ cat1.products.create!({
   image: open_asset('apparel2.jpg'),
   quantity: 0,
   price: 124.99
+
 })
 
 cat1.products.create!({
@@ -57,6 +58,7 @@ cat1.products.create!({
   image: open_asset('apparel3.jpg'),
   quantity: 4,
   price: 34.49
+
 })
 
 cat1.products.create!({
@@ -132,5 +134,12 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+Review.destroy_all
+
+Product.all.each do |product|    
+  3.times do 
+    product.reviews.create!(description: Faker::Hipster.paragraph(1), rating: rand(5) + 1, user_id: 1)
+  end
+end
 
 puts "DONE!"
