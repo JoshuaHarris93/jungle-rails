@@ -59,3 +59,9 @@ group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  # RSPEC unit testing
+end
+
