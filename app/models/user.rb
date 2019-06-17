@@ -7,17 +7,18 @@ class User < ActiveRecord::Base
     validates :password, length: { minimum: 6 }
     validates :password, presence: true
     validates :password_confirmation, presence: true
+    validates_uniqueness_of :email, :case_sensitive => false
 
     def authenticate_with_credentials(email, password)
         
-        user = User.find_by_email(email).where(email = @user.email)
+        user = User.find_by_email(email)
         if user.email && user.password
             @user = user
           else
             @user = nil
         end
         # find the user with that email from the database
-        # if you have a user, and the password matches, return that user
+        # if you have a user, and the password matches, return that user    
     end
 
 end
