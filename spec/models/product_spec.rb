@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
 
-  context "when name, price, quantity, and category is not provided, " do
+  context "when checking product fields " do
     
     it 'is not valid' do
       @category = Category.new
