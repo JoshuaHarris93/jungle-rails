@@ -65,3 +65,9 @@ group :development, :test do
   # RSPEC unit testing
 end
 
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
+
