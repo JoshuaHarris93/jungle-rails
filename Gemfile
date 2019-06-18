@@ -66,8 +66,12 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'shoulda-matchers'
   gem 'poltergeist'
   gem 'database_cleaner'
+  gem 'capybara-selenium'
+  gem 'selenium-webdriver', '~> 2.53'
 end
+
+
 
