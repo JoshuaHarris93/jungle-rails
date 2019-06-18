@@ -26,7 +26,8 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     quantity: 10,
     price: 64.99
     )
-
+    save_screenshot("home.png")
     expect(page).to have_css 'article.product', count: 10
+    
   end
 end
