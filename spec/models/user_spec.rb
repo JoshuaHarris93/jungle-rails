@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
   before :each do
   @user = User.new
   @user.name = "Josh"
-  @user.email = "Test@test.com"
+  @user.email = " Test@test.com "
   @user.password = "HelloBob"
   @user.password_confirmation = "HelloBob"
   end
@@ -18,6 +18,7 @@ RSpec.describe User, type: :model do
       @user.valid?
 
       expect(@user).to_not be_valid
+
     end
 
     it 'password is not valid' do
@@ -27,6 +28,23 @@ RSpec.describe User, type: :model do
 
       expect(@user).to_not be_valid
     end
+    
+    it 'case insensitive' do
+      user = User.new
+      User.new(email: "Bob@gmail.com")
+      
+      user.valid?
+
+      expect(user).to_not be_valid
+    end
+
+    it 'ignores whitespace' do
+      user = User.new
+      User.new(email: "   bob@gmail.com    ")
+    user.valid?
+
+    expect(user).to_not be_valid
+  end
 
   end  
 
@@ -37,6 +55,7 @@ RSpec.describe User, type: :model do
       @user.save
       user = User.authenticate_with_credentials(@user.email, @user.password)
       expect(user).to_not be_nil
+    
     end
   end
 
