@@ -19,9 +19,9 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     visit root_path
 
     # @category.products.create!(
-    #   name:  Faker::Hipster.sentence(3),
-    #   description: Faker::Hipster.paragraph(4),
-    #   image: open_asset('apparel1.jpg'),
+      #   name:  Faker::Hipster.sentence(3),
+      #   image: open_asset('apparel1.jpg'),
+      #   description: Faker::Hipster.paragraph(4),
     #   quantity: 10,
     #   price: 64.99
     # )
